@@ -137,14 +137,14 @@ function addReview(arr, name, rating, feedback) {
   arr.push(instance);
   return arr;
 }
-console.log(
-  addReview(
-    reviews,
-    "Daniela",
-    5,
-    "Beautiful atmosphere and wonderful vegan options!"
-  )
-);
+// console.log(
+//   addReview(
+//     reviews,
+//     "Daniela",
+//     5,
+//     "Beautiful atmosphere and wonderful vegan options!"
+//   )
+// );
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Write a function to return a review based on the index of the review in the array.
@@ -176,7 +176,7 @@ function getLastReview(newArr) {
   console.log(i);
   return `${newArr[i].name} gave the restaurant a ${newArr[i].rating} star review, and their feedback was: ${newArr[i].feedback}`;
 }
-console.log(getLastReview(reviews));
+// console.log(getLastReview(reviews));
 
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
 
@@ -194,9 +194,17 @@ Use the getReviewsByRating function below to do the following:
   ]
 */
 
-function getReviewByRating(/* code here */) {
-  /* code here */
+function getReviewByRating(arr) {
+  const allArrays = [];
+  for (let i = 0; i < arr.length; i++) {
+    // console.log(arr[i]);
+    if (arr[i].rating >= 4 && arr[i].rating < 5) {
+      allArrays.push(arr[i]);
+    }
+  }
+  return allArrays;
 }
+console.log(getReviewByRating(reviews));
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪💪   
 Use the getLongReviews function below to do the following:
