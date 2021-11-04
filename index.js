@@ -172,9 +172,9 @@ Use the getLastReview function below to do the following:
 */
 
 function getLastReview(newArr) {
-  let i = newArr.length - 1;
-  console.log(i);
-  return `${newArr[i].name} gave the restaurant a ${newArr[i].rating} star review, and their feedback was: ${newArr[i].feedback}`;
+  let lastVar = newArr.length - 1;
+  console.log(lastVar);
+  return `${newArr[lastVar].name} gave the restaurant a ${newArr[lastVar].rating} star review, and their feedback was: ${newArr[lastVar].feedback}`;
 }
 // console.log(getLastReview(reviews));
 
@@ -193,18 +193,19 @@ Use the getReviewsByRating function below to do the following:
     {name:"Lauren", rating: 4, feedback: "Absolutely love that they have karaoke Fridays! Food and drink selection is okay."}
   ]
 */
+//param = array
+//return
 
 function getReviewByRating(arr) {
   const allArrays = [];
   for (let i = 0; i < arr.length; i++) {
-    // console.log(arr[i]);
     if (arr[i].rating >= 4 && arr[i].rating < 5) {
       allArrays.push(arr[i]);
     }
   }
   return allArrays;
 }
-console.log(getReviewByRating(reviews));
+// console.log(getReviewByRating(reviews));
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪💪   
 Use the getLongReviews function below to do the following:
@@ -219,9 +220,18 @@ Use the getLongReviews function below to do the following:
   ]
 */
 
-function getLongReviews(/* code here */) {
-  /* code here */
+function getLongReviews(array) {
+  const longReviews = [];
+  for (let i = 0; i < array.length; i++) {
+    let feed = array[i].feedback.split(" ");
+    console.log(feed);
+    if (feed.length > 15) {
+      longReviews.push(array[i]);
+    }
+  }
+  return longReviews;
 }
+console.log(getLongReviews(reviews));
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 3: 💪💪💪💪💪💪💪💪💪💪 
 This stretch goal does not use the reviews data!  You create your own object in this stretch goal.
